@@ -1,4 +1,5 @@
 <?php
+
 /**
  *   @package Plugin_Development
  
@@ -31,7 +32,7 @@ class Admin extends BaseController
 
         $this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
     }
-
+//its used to set pagesgit
     public function setPages()
     {
 
@@ -42,8 +43,8 @@ class Admin extends BaseController
                 'capability' =>  'manage_options',
                 'menu_slug' => 'devXpert_plugin',
                 //'callback' => function () {
-                  //  return require_once(plugin_dir_path(dirname(__FILE__, 2)) . "/template/admin.php");},
-                 'callback'  =>array($this->callbacks, 'adminDashboard'),
+                //  return require_once(plugin_dir_path(dirname(__FILE__, 2)) . "/template/admin.php");},
+                'callback'  => array($this->callbacks, 'adminDashboard'),
                 'icon_url' => 'dashicons-store',
                 'position' => 110
 
