@@ -1,0 +1,13 @@
+{
+    "name": "user/plugin_development",
+    "description": "Awsome Starter plugin example",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Config\\": "config/"
+        }
+    }
+}
