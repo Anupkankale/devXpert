@@ -29,8 +29,9 @@ class AdminCallbacks extends BaseController
    public function devXpertTextExample()
    {
     $value = esc_attr( get_option('text_example'));
+     
 
-    echo '<input type="text" class="regular-text" name="text_example" value="'.$value.' "placeholder="Write Something Here !"> ';
+    echo '<input type="text" class="regular-text" name="text_example" value="' .$value. '"placeholder="Write Something Here!"> ';
    }
 
 }
