@@ -12,6 +12,8 @@ use \Config\Api\SettingsApi;
 use \Config\Base\BaseController;
 use \Config\Api\Callbacks\AdminCallbacks;
 
+use function PHPSTORM_META\argumentsSet;
+
 class Admin extends BaseController
 {
 
@@ -29,6 +31,12 @@ class Admin extends BaseController
         $this->setPages();
 
         $this->setSubpages();
+
+        $this->setSettings();
+
+        $this->setSection();
+
+        $this->setField();
 
         $this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
     }
@@ -91,9 +99,56 @@ class Admin extends BaseController
         );
     }
 
-     public function setSetting()
-     {
+     public function setSettings()
+     {  
+        $args = array (
+            array(
+                'option_group'=> 'devXpert_option_group',
+                'option_name' => 'text_example',
+                'callback'=> array ($this-> callbacks,'devXpertOptionGroup')
+            )
+            );
+
+          $this -> settings->setSettings($args);
 
      }
+
+     public function setSection()
+     {  
+        $args = array (
+            array(
+                'id'=> 'devXpert_admin_index',
+                'title' => 'Settings',
+                'callback'=> array ($this-> callbacks,'devXpertAdminSection'),
+                'page'=>'devXpert_plugin'
+            )
+            );
+
+          $this -> settings->setSection($args);
+
+     }
+
+     public function setField()
+     {  
+        $args = array (
+            array(
+                'id'=> 'test_example',
+                'title' => 'Text Example',
+                'callback'=> array ($this-> callbacks,'devXpertTextExample'),
+                'page'=>'devXpert_plugin',
+                'section'=>'devXpert_admin_index',
+                'args'=>array(
+                    'label_for'=>'text_example',
+                    'class'=>'example-class'
+                )
+                
+            )
+            );
+
+          $this -> settings->setField($args);
+
+     }
+
+
 
 }

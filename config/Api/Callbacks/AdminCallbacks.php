@@ -15,8 +15,22 @@ class AdminCallbacks extends BaseController
 
     }
 
+   public function devXpertOptionGroup($input)
+   {
+     return $input;
+   }
+    
+   public function devXpertAdminSection()
+   {
+    
+    echo 'Check this beautiful Section....!';
+   }
+    
+   public function devXpertTextExample()
+   {
+    $value = esc_attr( get_option('text_example'));
 
-
-
+    echo '<input type="text" class="regular-text" name="text_example" value="'.$value.' "placeholder="Write Something Here !"> ';
+   }
 
 }
