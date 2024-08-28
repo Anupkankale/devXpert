@@ -8,13 +8,15 @@ window.addEventListener("load", function () {
   }
 
   function switchTab(event) {
+    event.preventDefault();
      document.querySelector("ul.nav-tab li.active").classList.remove("active");
      document.querySelector(".tab-pane.active").classList.remove("active");
 
       var clickedTab = event.currentTarget;
-
-      clickedTab.preventDefault();
+      var anchor = event.target;
+      var activePaneID = anchor.getAttribute("href");
       clickedTab.classList.add("active");
+      document.querySelector(activePaneID).classList.add("active");
       
   }
 });
