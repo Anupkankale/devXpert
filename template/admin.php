@@ -3,7 +3,7 @@
     <?php settings_errors();  ?>
 
 
-    <ul class="nav nav-tab">
+    <ul class="nav-tab">
         <li class="active"><a href="#tab-1">Manage Settings</a></li>
         <li><a href="#tab-2"> Updates </a></li>
         <li><a href="#tab-3"> About </a></li>

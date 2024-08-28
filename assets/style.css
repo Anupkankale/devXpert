@@ -22,7 +22,7 @@
 	text-decoration: none;
 }
 
-.nav-tabs > li > a:hover {
+.nav-tab > li > a:hover {
 	border-color: #eee #eee #ddd;
 } 
 
