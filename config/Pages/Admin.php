@@ -40,7 +40,7 @@ class Admin extends BaseController
 
         $this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
     }
-//its used to set pagesgit
+    //its used to set pagesgit
     public function setPages()
     {
 
@@ -99,56 +99,50 @@ class Admin extends BaseController
         );
     }
 
-     public function setSettings()
-     {  
-        $args = array (
+    public function setSettings()
+    {
+        $args = array(
             array(
-                'option_group'=> 'devXpert_option_group',
+                'option_group' => 'devXpert_option_group',
                 'option_name' => 'text_example',
-                'callback'=> array ($this-> callbacks,'devXpertOptionGroup')
+                'callback' => array($this->callbacks, 'devXpertOptionGroup')
             )
-            );
+        );
 
-          $this -> settings->setSettings($args);
+        $this->settings->setSettings($args);
+    }
 
-     }
-
-     public function setSection()
-     {  
-        $args = array (
+    public function setSection()
+    {
+        $args = array(
             array(
-                'id'=> 'devXpert_admin_index',
+                'id' => 'devXpert_admin_index',
                 'title' => 'Settings',
-                'callback'=> array ($this-> callbacks,'devXpertAdminSection'),
-                'page'=>'devXpert_plugin'
+                'callback' => array($this->callbacks, 'devXpertAdminSection'),
+                'page' => 'devXpert_plugin'
             )
-            );
+        );
 
-          $this -> settings->setSection($args);
+        $this->settings->setSection($args);
+    }
 
-     }
-
-     public function setField()
-     {  
-        $args = array (
+    public function setField()
+    {
+        $args = array(
             array(
-                'id'=> 'test_example',
+                'id' => 'test_example',
                 'title' => 'Text Example',
-                'callback'=> array ($this-> callbacks,'devXpertTextExample'),
-                'page'=>'devXpert_plugin',
-                'section'=>'devXpert_admin_index',
-                'args'=>array(
-                    'label_for'=>'text_example',
-                    'class'=>'example-class'
+                'callback' => array($this->callbacks, 'devXpertTextExample'),
+                'page' => 'devXpert_plugin',
+                'section' => 'devXpert_admin_index',
+                'args' => array(
+                    'label_for' => 'text_example',
+                    'class' => 'example-class'
                 )
-                
+
             )
-            );
+        );
 
-          $this -> settings->setField($args);
-
-     }
-
-
-
+        $this->settings->setField($args);
+    }
 }
