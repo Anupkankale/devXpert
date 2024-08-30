@@ -11,6 +11,7 @@ use Config\Api\Callbacks\AdminCallbacks as CallbacksAdminCallbacks;
 use \Config\Api\SettingsApi;
 use \Config\Base\BaseController;
 use \Config\Api\Callbacks\AdminCallbacks;
+use \Config\Api\Callbacks\ManagerCallbacks;
 
 use function PHPSTORM_META\argumentsSet;
 
@@ -19,14 +20,19 @@ class Admin extends BaseController
 
     public $settings;
     public $callbacks;
+    public $callbacks_mngr;
+
+
     public $pages = array();
     public $subpages = array();
+   
 
     public function register()
     {
         $this->settings = new SettingsApi();
 
         $this->callbacks = new AdminCallbacks();
+        $this->callbacks_mgr = new ManagerCallbacks();
 
         $this->setPages();
 
@@ -103,10 +109,52 @@ class Admin extends BaseController
      {  
         $args = array (
             array(
-                'option_group'=> 'devXpert_option_group',
-                'option_name' => 'text_example',
-                'callback'=> array ($this-> callbacks,'devXpertOptionGroup')
-            )
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'cpt_Manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'taxonomy_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'media_widget',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'testimonials_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'gallery_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'templates_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'login_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'membership_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+            array(
+                'option_group'=> 'devXpert_option_Settings',
+                'option_name' => 'chat_manager',
+                'callback'=> array ($this-> callbacks,'checkboxSanitize')
+            ),
+
+
             );
 
           $this -> settings->setSettings($args);
@@ -118,8 +166,8 @@ class Admin extends BaseController
         $args = array (
             array(
                 'id'=> 'devXpert_admin_index',
-                'title' => 'Settings',
-                'callback'=> array ($this-> callbacks,'devXpertAdminSection'),
+                'title' => 'Settings Manager',
+                'callback'=> array ($this-> callbacks_mngr,'adminSectionManager'),
                 'page'=>'devXpert_plugin'
             )
             );
@@ -132,14 +180,14 @@ class Admin extends BaseController
      {  
         $args = array (
             array(
-                'id'=> 'test_example',
-                'title' => 'Text Example',
-                'callback'=> array ($this-> callbacks,'devXpertTextExample'),
+                'id'=> 'cpt_Manager',
+                'title' => 'Activate Custom Post Type Manager',
+                'callback'=> array ($this-> callbacks_mngr,'checkboxField'),
                 'page'=>'devXpert_plugin',
                 'section'=>'devXpert_admin_index',
                 'args'=>array(
-                    'label_for'=>'text_example',
-                    'class'=>'example-class'
+                    'label_for'=>'cpt_Manager',
+           
                 )
                 
             )

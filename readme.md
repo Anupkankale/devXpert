@@ -14,3 +14,14 @@ List of  Feature to create
 * MemberShip Protected Area
 * Custom template Section
 * Floating Button and  pop-up Feachure
+
+
+cpt_Manager
+taxonomy_manager
+media_widget
+testimonials_manager
+gallery_manager
+templates_manager
+login_manager
+membership_manager
+chat_manager

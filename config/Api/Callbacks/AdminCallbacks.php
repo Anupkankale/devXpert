@@ -15,7 +15,7 @@ class AdminCallbacks extends BaseController
 
     }
 
-   public function devXpertOptionGroup($input)
+  /* public function devXpertOptionGroup($input)
    {
      return $input;
    }
@@ -24,7 +24,7 @@ class AdminCallbacks extends BaseController
    {
     
     echo 'Check this beautiful Section....!';
-   }
+   }*/
     
    public function devXpertTextExample()
    {
