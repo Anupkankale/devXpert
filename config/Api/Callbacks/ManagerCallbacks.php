@@ -20,12 +20,12 @@ class ManagerCallbacks extends BaseController
     echo 'Activate The Section And Feachure of this ';
    }
 
-   public function checkboxField($arg)
+   public function checkboxField( $args )
    {
-      $name = $arg['label_for'];
-      $classes = $arg['classes'];   
-      $checkbox = get_option($name);
-     return '<input type="checkbox" name=" '.$name.'" value="1" class="'.$classes .'"'.($checkbox ? 'checked':'').'>';
+      $name= $args['label_for'];
+      $classes = $args['class'];   
+      $checkbox = get_option( $name );
+    echo '<input type="checkbox" name="'.$name.'" value="1" class="'.$classes .'"'.($checkbox ? 'checked':'').'>';
    }
 
 }
