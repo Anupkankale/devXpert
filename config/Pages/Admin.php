@@ -109,43 +109,6 @@ class Admin extends BaseController
     {
         $args = array(
             array(
-<<<<<<< HEAD
-                'option_group' => 'devXpert_option_group',
-                'option_name' => 'text_example',
-                'callback' => array($this->callbacks, 'devXpertOptionGroup')
-            )
-        );
-
-        $this->settings->setSettings($args);
-    }
-
-    public function setSection()
-    {
-        $args = array(
-            array(
-                'id' => 'devXpert_admin_index',
-                'title' => 'Settings',
-                'callback' => array($this->callbacks, 'devXpertAdminSection'),
-                'page' => 'devXpert_plugin'
-            )
-        );
-
-        $this->settings->setSection($args);
-    }
-
-    public function setField()
-    {
-        $args = array(
-            array(
-                'id' => 'test_example',
-                'title' => 'Text Example',
-                'callback' => array($this->callbacks, 'devXpertTextExample'),
-                'page' => 'devXpert_plugin',
-                'section' => 'devXpert_admin_index',
-                'args' => array(
-                    'label_for' => 'text_example',
-                    'class' => 'example-class'
-=======
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'cpt_Manager',
                 'callback' => array($this->callbacks, 'checkboxSanitize')
@@ -167,7 +130,7 @@ class Admin extends BaseController
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
-                'option_name' => 'gallery_manager',git
+                'option_name' => 'gallery_manager',
                 'callback' => array($this->callbacks, 'checkboxSanitize')
             ),
             array(
@@ -224,7 +187,6 @@ class Admin extends BaseController
                     'label_for' => 'cpt_Manager',
                     'class' => 'ui-toggle'
 
->>>>>>> 60c8f66880c6087b44994117a047e858967f9bad
                 )
 
             )
