@@ -7,13 +7,13 @@
 
 namespace Config\Pages;
 
-use Config\Api\Callbacks\AdminCallbacks as CallbacksAdminCallbacks;
+ 
 use \Config\Api\SettingsApi;
 use \Config\Base\BaseController;
 use \Config\Api\Callbacks\AdminCallbacks;
 use \Config\Api\Callbacks\ManagerCallbacks;
 
-use function PHPSTORM_META\argumentsSet;
+ 
 
 class Admin extends BaseController
 {
@@ -21,8 +21,6 @@ class Admin extends BaseController
     public $settings;
     public $callbacks;
     public $callbacks_mngr;
-
-
     public $pages = array();
     public $subpages = array();
 
@@ -30,8 +28,7 @@ class Admin extends BaseController
     public function register()
     {
         $this->settings = new SettingsApi();
-
-        $this->callbacks = new AdminCallbacks();
+     $this->callbacks = new AdminCallbacks();
         $this->callbacks_mngr = new ManagerCallbacks();
 
         $this->setPages();
@@ -56,13 +53,10 @@ class Admin extends BaseController
                 'menu_title' =>  'DevXpert',
                 'capability' =>  'manage_options',
                 'menu_slug' => 'devXpert_plugin',
-                //'callback' => function () {
-                //  return require_once(plugin_dir_path(dirname(__FILE__, 2)) . "/template/admin.php");},
                 'callback'  => array($this->callbacks, 'adminDashboard'),
                 'icon_url' => 'dashicons-store',
                 'position' => 110
-
-            )
+             )
         );
     }
 
@@ -111,7 +105,7 @@ class Admin extends BaseController
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'cpt_Manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
