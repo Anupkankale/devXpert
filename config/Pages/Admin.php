@@ -28,7 +28,7 @@ class Admin extends BaseController
     public function register()
     {
         $this->settings = new SettingsApi();
-     $this->callbacks = new AdminCallbacks();
+        $this->callbacks = new AdminCallbacks();
         $this->callbacks_mngr = new ManagerCallbacks();
 
         $this->setPages();
@@ -110,37 +110,37 @@ class Admin extends BaseController
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'taxonomy_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'media_widget',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'testimonials_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'gallery_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'templates_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'login_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',
                 'option_name' => 'membership_manager',
-                'callback' => array($this->callbacks, 'checkboxSanitize')
+                'callback' => array($this->callbacks_mngr, 'checkboxSanitize')
             ),
             array(
                 'option_group' => 'devXpert_option_Settings',

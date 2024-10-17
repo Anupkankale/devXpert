@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
   //store tabs variable
 
-  var tab = this.document.querySelectorAll("ul.nav-tab > li");
+  let tab = this.document.querySelectorAll("ul.nav-tab > li");
 
   for (let i = 0; i < tab.length; i++) 
    {
@@ -13,9 +13,9 @@ window.addEventListener("load", function () {
     document.querySelector("ul.nav-tab li.active").classList.remove("active");
     document.querySelector(".tab-pane.active").classList.remove("active");
 
-    var clickedTab = event.currentTarget;
-    var anchor = event.target;
-    var activePaneID = anchor.getAttribute("href");
+     let clickedTab = event.currentTarget;
+     let anchor = event.target;
+     let activePaneID = anchor.getAttribute("href");
 
     clickedTab.classList.add("active");
     document.querySelector(activePaneID).classList.add("active");

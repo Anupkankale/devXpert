@@ -21,16 +21,8 @@ class ManagerCallbacks extends BaseController
 
     public function checkboxField($args)
     {
-        // Ensure $args is an array before accessing its elements
-        if (!is_array($args)) {
-            return;  // Exit early if $args is not an array
-        }
-
-        // Extract necessary variables from $args array
-        $name = isset($args['label_for']) ? $args['label_for'] : '';
-        $classes = isset($args['class']) ? $args['class'] : '';
-        $checkbox = get_option($name);
-
-        echo '<input type="checkbox" name="' . $name . '" value="1" class="' . $classes . '" ' . ($checkbox ? 'checked' : '') . '>';
+       $checkbox =get_option( $args );
+     
+       return;
     }
 }
