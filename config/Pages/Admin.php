@@ -13,9 +13,7 @@ use \Config\Base\BaseController;
 use \Config\Api\Callbacks\AdminCallbacks;
 use \Config\Api\Callbacks\ManagerCallbacks;
 
- 
-
-class Admin extends BaseController
+ class Admin extends BaseController
 {
 
     public $settings;
@@ -24,8 +22,7 @@ class Admin extends BaseController
     public $pages = array();
     public $subpages = array();
 
-
-    public function register()
+     public function register()
     {
         $this->settings = new SettingsApi();
         $this->callbacks = new AdminCallbacks();
