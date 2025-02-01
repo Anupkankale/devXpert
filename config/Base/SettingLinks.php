@@ -13,7 +13,7 @@ namespace Config\Base;
 
     public function setting_link($links)
     {
-        //Add Custom Setting Link
+      //Add Custom Setting Link
         $setting_link = '<a href="admin.php?page=DevXpert_plugin">Setting </a>';
         array_push($links, $setting_link);
         return $links;
