@@ -11,7 +11,7 @@ use \Config\Base\BaseController;
         add_action('admin_enqueue_scripts', array($this, 'enqueue'));
     }
 
-    //This Function is use for link our Css and JavaScript File
+    //This Function is use for link our CSS and JavaScript File
     function enqueue()
     {
         wp_enqueue_style('mypluginstyle',   $this->plugin_url .'/assets/style.css');
