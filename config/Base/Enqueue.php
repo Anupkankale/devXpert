@@ -3,7 +3,6 @@
   
  */
 namespace Config\Base;
-
 use \Config\Base\BaseController;
 
  class Enqueue extends BaseController
