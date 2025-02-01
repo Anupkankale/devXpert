@@ -14,13 +14,10 @@
                 settings_fields('devXpert_option_Settings');
                 do_settings_sections('devXpert_plugin');
                 submit_button();
-                ?>
-
-            </form>
+                ?> </form>
 
         </div>
-
-        <div id="tab-2" class="tab-pane ">
+     <div id="tab-2" class="tab-pane ">
             <h3>Updates</h3>
         </div>
 
