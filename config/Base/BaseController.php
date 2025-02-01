@@ -2,7 +2,6 @@
 /**
  *@package Plugin_Development
  */
-
  namespace Config\Base;
 
  class BaseController
