@@ -1,5 +1,4 @@
 <?php
-
 /**   
  *Plugin Name: DevXpert
  *Plugin URL : http://DevXpert.com
@@ -14,29 +13,21 @@
 //if this file is called directly, Mission Abort !!!
 defined('ABSPATH') or die('Hey what are you doing here ?');
 
-
 //Require once the Composer Autoload
 if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
     require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
-
-
-
-
 //This Code is runs During plugin activation
+function activate_devXpert_plugin()
+    {
+     Config\Base\Activate::activate();
+    }
 
-    function activate_devXpert_plugin()
-        {
-           
-            Config\Base\Activate::activate();
-        }
-
-        register_activation_hook(__FILE__, 'activate_devXpert_plugin');
+     register_activation_hook(__FILE__, 'activate_devXpert_plugin');
 
     function deactivate_devXpert_plugin()
         {
-           
-            Config\Base\Deactivate::deactivate();
+           Config\Base\Deactivate::deactivate();
         }
 
         register_deactivation_hook(__FILE__, 'deactivate_devXpert_plugin');
