@@ -3,7 +3,7 @@
  *Plugin Name: DevXpert
  *Plugin URL : http://DevXpert.com
  *Description: Welcome to DevXpert, the ultimate development toolkit designed to empower both novice and experienced WordPress developers.
- *            Whether you’re just starting out or you’re a seasoned pro, DevXpert offers a comprehensive suite of tools and features that rival premium plugins.
+ *Whether you’re just starting out or you’re a seasoned pro, DevXpert offers a comprehensive suite of tools and features that rival premium plugins.
  *Version: 1.0
  *Author: Anup_Kankale
  *Author URl: http://anupkankale.com
