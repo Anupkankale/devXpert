@@ -7,8 +7,6 @@
         <li><a href="#tab-3"> About </a></li>
     </ul>
 
-
-
     <div class="tab-content">
         <div id="tab-1" class="tab-pane active">
             <form method="post" action="options.php">
